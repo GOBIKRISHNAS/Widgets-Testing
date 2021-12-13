@@ -3,8 +3,10 @@ ZOHO.CREATOR.init().then(function(data) {
     config = {
         formName : "Form1",
         data : {
-            Number: 101,
-            Single_Line: "Krishna"
+            "data" : {
+                Number: 101,
+                Single_Line: "Krishna"
+            }
         }
     }
     //add record API
