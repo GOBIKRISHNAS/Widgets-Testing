@@ -61,13 +61,19 @@ ZOHO.CREATOR.init().then(function(data) {
     // ZOHO.CREATOR.API.deleteRecord(config).then(function(response){
     //     console.log(response);
     // });
+});
 
-    var config = { 
+
+function uploadFileAPI() {
+    var fileObject = document.getElementById("fileInput").files[0];
+    config = { 
         reportName : "Form1_Report", 
-        id : "88557000000237007"
+        id : "88557000000237007",
+        fieldName : "Attachments",
+        file : fileObject
     } 
-    //delete record by Id API
-    ZOHO.CREATOR.API.deleteRecordById(config).then(function(response){
+
+    ZOHO.CREATOR.API.uploadFile(config).then(function(response){
         console.log(response);
     });
-});
+}
