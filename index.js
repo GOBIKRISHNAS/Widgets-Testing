@@ -1,3 +1,4 @@
+console.log(ZOHO)
 ZOHO.CREATOR.init().then(function(data) {
     config = {
         formName : "Form1",
