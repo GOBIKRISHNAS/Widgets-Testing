@@ -26,8 +26,23 @@ ZOHO.CREATOR.init().then(function(data) {
         }
     }
     //update record API
-    ZOHO.CREATOR.API.updateRecord(config).then(function(response){
-        //callback block
-        console.log("updateRecord: ", response);
+    // ZOHO.CREATOR.API.updateRecord(config).then(function(response){
+    //     //callback block
+    //     console.log("updateRecord: ", response);
+    // });
+
+
+    config = { 
+        reportName : "Form1_Report", 
+        criteria : "(Number == \"101\")",
+        page : 1,
+        pageSize : 10
+    }
+    
+    ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
+        var recordArr = response.data;
+        for(var index in recordArr){
+            console.log(recordArr[index]);
+        }	
     });
 });
