@@ -75,7 +75,7 @@ function uploadFileAPI() {
         } 
         
         ZOHO.CREATOR.API.uploadFile(config).then(function(response){
-            console.log(response);
+            console.log("File uploaded successfully");
         });
     });
 }
