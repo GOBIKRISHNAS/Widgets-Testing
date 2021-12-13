@@ -37,7 +37,7 @@ ZOHO.CREATOR.init().then(function(data) {
         page : 1,
         pageSize : 10
     }
-    
+    //get all record API
     // ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
     //     console.log(response);
     // });
@@ -47,8 +47,10 @@ ZOHO.CREATOR.init().then(function(data) {
         reportName : "Form1_Report", 
         id : "88557000000237003"
     } 
-    
-    ZOHO.CREATOR.API.getRecordById(config).then(function(response){
-        console.log(response);
-    });
+    //get record by Id API
+    // ZOHO.CREATOR.API.getRecordById(config).then(function(response){
+    //     console.log(response);
+    // });
+
+
 });
