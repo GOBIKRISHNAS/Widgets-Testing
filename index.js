@@ -66,14 +66,16 @@ ZOHO.CREATOR.init().then(function(data) {
 
 function uploadFileAPI() {
     var fileObject = document.getElementById("fileInput").files[0];
-    config = { 
-        reportName : "Form1_Report", 
-        id : "88557000000237007",
-        fieldName : "Attachments",
-        file : fileObject
-    } 
-
-    ZOHO.CREATOR.API.uploadFile(config).then(function(response){
-        console.log(response);
+    ZOHO.CREATOR.init().then(function(data) {
+        config = { 
+            reportName : "Form1_Report", 
+            id : "88557000000237007",
+            fieldName : "Attachments",
+            file : fileObject
+        } 
+        
+        ZOHO.CREATOR.API.uploadFile(config).then(function(response){
+            console.log(response);
+        });
     });
 }
