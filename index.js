@@ -1,4 +1,4 @@
-console.log(ZOHO)
+
 ZOHO.CREATOR.init().then(function(data) {
     config = {
         formName : "Form1",
@@ -10,10 +10,10 @@ ZOHO.CREATOR.init().then(function(data) {
         }
     }
     //add record API
-    // ZOHO.CREATOR.API.addRecord(config).then(function(response){
-    //     //callback block
-    //     console.log("addRecord: ", response);
-    // });
+    ZOHO.CREATOR.API.addRecord(config).then(function(response){
+        //callback block
+        console.log("addRecord: ", response);
+    });
 
 
     config = {
