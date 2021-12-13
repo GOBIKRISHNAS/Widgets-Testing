@@ -40,6 +40,7 @@ ZOHO.CREATOR.init().then(function(data) {
     }
     
     ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
+        console.log(response);
         var recordArr = response.data;
         for(var index in recordArr){
             console.log(recordArr[index]);
