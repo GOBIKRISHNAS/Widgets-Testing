@@ -33,17 +33,12 @@ ZOHO.CREATOR.init().then(function(data) {
 
 
     config = { 
-        reportName : "Form1_Report", 
-        criteria : "(Number == \"101\")",
+        reportName : "Form1_Report",
         page : 1,
         pageSize : 10
     }
     
     ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
         console.log(response);
-        var recordArr = response.data;
-        for(var index in recordArr){
-            console.log(recordArr[index]);
-        }	
     });
 });
