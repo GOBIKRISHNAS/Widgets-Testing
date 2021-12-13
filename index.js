@@ -11,14 +11,14 @@ ZOHO.CREATOR.init().then(function(data) {
     }
     //add record API
     ZOHO.CREATOR.API.addRecord(config).then(function(response){
-        //callback block
+        window.ID = response.data.ID
         console.log("addRecord: ", response);
     });
 
 
     config = {
         reportName : "Form1_Report",
-        id: "88557000000237003",
+        id: ID,
         data : {
             "data" : {
                 Number: 101,
@@ -26,11 +26,10 @@ ZOHO.CREATOR.init().then(function(data) {
             }
         }
     }
-    //update record API
-    // ZOHO.CREATOR.API.updateRecord(config).then(function(response){
-    //     //callback block
-    //     console.log("updateRecord: ", response);
-    // });
+    // update record API
+    ZOHO.CREATOR.API.updateRecord(config).then(function(response){
+        console.log("updateRecord: ", response);
+    });
 
 
     config = { 
@@ -39,41 +38,58 @@ ZOHO.CREATOR.init().then(function(data) {
         pageSize : 10
     }
     //get all record API
-    // ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
-    //     console.log(response);
-    // });
+    ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
+        console.log(response);
+    });
 
 
     var config = {
         reportName : "Form1_Report", 
-        id : "88557000000237003"
+        id : ID
     } 
     //get record by Id API
-    // ZOHO.CREATOR.API.getRecordById(config).then(function(response){
-    //     console.log(response);
-    // });
+    ZOHO.CREATOR.API.getRecordById(config).then(function(response){
+        console.log(response);
+    });
 
     var config = { 
         reportName : "Form1_Report", 
         criteria : "(Single_Line == \"Gobi Krishna s\")"
     } 
     //delete record API
-    // ZOHO.CREATOR.API.deleteRecord(config).then(function(response){
-    //     console.log(response);
-    // });
+    ZOHO.CREATOR.API.deleteRecord(config).then(function(response){
+        console.log(response);
+    });
 });
 
 
 function uploadFileAPI() {
     var fileObject = document.getElementById("fileInput").files[0];
     ZOHO.CREATOR.init().then(function(data) {
+
+        config = {
+            formName : "Form1",
+            data : {
+                "data" : {
+                    Number: 101,
+                    Single_Line: "Krishna"
+                }
+            }
+        }
+        //add record API
+        ZOHO.CREATOR.API.addRecord(config).then(function(response){
+            window.ID = response.data.ID
+            console.log("addRecord: ", response);
+        });
+
+
         config = { 
             reportName : "Form1_Report", 
-            id : "88557000000237007",
+            id : ID,
             fieldName : "Attachments",
             file : fileObject
         } 
-        
+        //upload file API
         ZOHO.CREATOR.API.uploadFile(config).then(function(response){
             console.log("File uploaded successfully");
         });
