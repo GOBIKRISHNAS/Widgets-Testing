@@ -52,5 +52,13 @@ ZOHO.CREATOR.init().then(function(data) {
     //     console.log(response);
     // });
 
+    var config = { 
+        reportName : "Form1_Report", 
+        criteria : "(Single_Line == \"Gobi Krishna s\")"
+    } 
+    //delete record API
+    ZOHO.CREATOR.API.deleteRecord(config).then(function(response){
+        console.log(response);
+    });
 
 });
