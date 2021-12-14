@@ -16,7 +16,7 @@ ZOHO.CREATOR.init().then(function(data) {
 
     config = {
         reportName : "Form1_Report",
-        id: 88557000000238063,
+        id: 88557000000240011,
         data : {
             "data" : {
                 Number: 101,
@@ -43,7 +43,7 @@ ZOHO.CREATOR.init().then(function(data) {
 
     var config = {
         reportName : "Form1_Report", 
-        id : 88557000000238063
+        id : 88557000000240011
     } 
     //get record by Id API
     ZOHO.CREATOR.API.getRecordById(config).then(function(response){
@@ -69,7 +69,7 @@ function uploadFileAPI() {
     ZOHO.CREATOR.init().then(function(data) {
         config = { 
             reportName : "Form1_Report", 
-            id : 88557000000238063,
+            id : 88557000000240011,
             fieldName : "Attachments",
             file : fileObject
         } 
